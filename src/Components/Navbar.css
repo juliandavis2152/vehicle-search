@@ -1,0 +1,164 @@
+.navbar {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.nav-container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    height: 40px;
+    width: 150px;
+}
+
+.nav-links {
+    display: flex;
+    width: 100%;
+    max-width: 430px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-link {
+    position: relative;
+    text-decoration: none;
+}
+
+.navbar a {
+    color: black;
+}
+
+.nav-link:after {
+    background-color: #0a1f44;
+    transition: all .25s cubic-bezier(.694,.048,.335,1);
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    right: 0;
+    left: auto;
+    width: 0;
+    height: 3px;
+    z-index: 2;
+}
+
+.nav-link:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+
+.nav-link span {
+    color: #6030b1
+}
+
+.nav-btn {
+    display: flex;
+    cursor: pointer;
+    max-height: 48px;
+    min-height: 48px;
+    padding: 12px 40px;
+    align-items: center;
+    border: 2px #5d3eff;
+    border-radius: 50px;
+    background-color: #6030b1;
+    color: #fff !important;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all .35s ease;
+    cursor: no-drop;
+}
+
+.nav-btn:hover {
+    background-color: #5d3eff;
+    color: white;
+}
+
+#phone-nav {
+    position: relative;
+    display: none;
+}
+
+.bar-menu {
+    width: 37px;
+    height: 37px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-sizing: content-box;
+    padding: 5px;
+    cursor: pointer;
+    color: #6030b1;
+}
+
+.showMenu {
+    transform: translateX(100%);
+    opacity: 0;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1005;
+    background-color: hsla(0, 0%, 100%, .95);
+    transition: all .4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.showMenu.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+a.showMenu-link {
+    color: #6030b1;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 60px;
+}
+
+.showMenu-link {
+    padding: 16px;
+    text-decoration: none;
+}
+
+.close-btn {
+    color: #6030b1;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 37px;
+    height: 37px;
+    z-index: 2000;
+    cursor: pointer;
+}
+
+.close-menu.show {
+    pointer-events: auto;
+}
+
+@media (max-width: 750px) {
+    .nav-links,
+    .nav-btn {
+        display: none;
+    }
+
+    #phone-nav {
+        display: block;
+    }
+}
+
